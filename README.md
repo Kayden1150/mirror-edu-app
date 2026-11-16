@@ -9,3 +9,13 @@
 ## 실행
 
 `index.html`을 브라우저에서 엽니다. GitHub Pages로 올리면 아이패드 Safari에서 "홈 화면에 추가"로 앱처럼 쓸 수 있습니다.
+
+## Cloud Run 배포
+
+`Dockerfile`과 `nginx.conf.template`이 포함되어 있어 Google Cloud Run에 바로 배포할 수 있습니다.
+
+```bash
+gcloud run deploy mirror-edu-app --source . --region asia-northeast3 --allow-unauthenticated
+```
+
+비공개(인증 필요) 서비스로 올리려면 `--allow-unauthenticated` 대신 `--no-allow-unauthenticated`를 사용하세요.
